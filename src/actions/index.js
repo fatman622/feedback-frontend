@@ -1,4 +1,4 @@
-import { GET_FEEDBACKS, CREATE_FEEDBACK, UPDATE_FEEDBACK} from './types';
+import { GET_FEEDBACKS, CREATE_FEEDBACK, UPDATE_FEEDBACK, GET_FEEDBACK} from './types';
 import axios from 'axios';
 
 // const API_URL = "http://localhost:5000/api/v1" ;
@@ -22,10 +22,17 @@ export function createFeedback(props){
 }
 
 export function updateFeedback(id, props){
-	const request = axios.delete(`${API_URL}/feedbacks/${id}`, props); 	
+	const request = axios.put(`${API_URL}/feedbacks/${id}`, props); 	
 	return {
 		type: UPDATE_FEEDBACK,
 		payload: request
 	};
 }
 
+export function getFeedback(id){
+	const request = axios.get(`${API_URL}/feedbacks/${id}`); 	
+	return {
+		type: GET_FEEDBACK,
+		payload: request
+	};
+}

@@ -1,4 +1,5 @@
 export const GET_FEEDBACKS = "GET_FEEDBACKS" ;
+export const GET_FEEDBACK = "GET_FEEDBACK" ;
 export const CREATE_FEEDBACK = "CREATE_FEEDBACK" ;
 export const UPDATE_FEEDBACK = "UPDATE_FEEDBACK" ;
 
