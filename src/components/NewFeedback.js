@@ -55,7 +55,8 @@ class NewFeedback extends Component{
 	render(){
 		const {handleSubmit, error} = this.props;
 		return(
-			<div>
+			<div className="formFeedback">
+				<h1>Form Feedback</h1>
 				<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 					<div> 
 	          <Field 
@@ -77,7 +78,8 @@ class NewFeedback extends Component{
 	          <Field 
 	          	name="date" 
 	          	component={renderInput} 
-	          	type="date" 
+	          	type="date"
+	          	label=" " 
 	          />
           </div>
           <div> 
