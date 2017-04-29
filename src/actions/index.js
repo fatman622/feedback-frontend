@@ -14,13 +14,14 @@ export function getFeedbacks(props){
 }
 
 export function createFeedback(props){
-	console.log("File",)
 	const data = new FormData();
 	data.append('age', data.age);
 	data.append('name', data.name);
 	data.append('date', data.date);
 	data.append('id_last_request', data.id_last_request);
-	data.append('file', props.file[0]);
+	if(props.file){
+		data.append('file', props.file[0]);
+	}
 	const request = axios.post(`${API_URL}/feedbacks`, data); 
 	return {
 		type: CREATE_FEEDBACK,
