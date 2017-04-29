@@ -1,8 +1,8 @@
 import { GET_FEEDBACKS, CREATE_FEEDBACK, GET_FEEDBACK} from './types';
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api/v1" ;
-// const API_URL = "https://desolate-dawn-81748.herokuapp.com/api/v1" ;
+// const API_URL = "http://localhost:5000/api/v1" ;
+const API_URL = "https://desolate-dawn-81748.herokuapp.com/api/v1" ;
 
 // Feedbacks functions
 export function getFeedbacks(props){
