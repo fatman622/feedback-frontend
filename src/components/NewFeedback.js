@@ -17,6 +17,9 @@ const renderInput = ({ input, label, meta: { touched, error }, ...custom }) => (
   />
 )
 
+const FileUpload = ({ input, type }) =>
+  <input type={type} {...input} />
+
 class NewFeedback extends Component{
 	onSubmit(data){
 		const {createFeedback, getFeedback, reset} = this.props;
@@ -26,8 +29,8 @@ class NewFeedback extends Component{
 				last_request_id = request.payload.data.id;
 			});
 		}
-
 		return createFeedback(data).then((request) => {
+			console.log("data fie",data)
 			if (data.age < 17 || data.age > 65 || data.age == null) {
 	      throw new SubmissionError({ age: 'Age must be from 17 to 65'})
 	    } 
@@ -57,7 +60,7 @@ class NewFeedback extends Component{
 		return(
 			<div className="formFeedback">
 				<h1>Form Feedback</h1>
-				<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+				<form onSubmit={handleSubmit(this.onSubmit.bind(this))} encType="multipart/form-data">
 					<div> 
 	          <Field 
 	          	name="age" 
@@ -89,7 +92,8 @@ class NewFeedback extends Component{
 	          	type="text" 
 	          	label="Last request id"
 	          />
-          </div> 
+          </div>
+         <Field name="file" component={FileUpload} type="file" />
           <div>{error && <strong>{error}</strong>}</div>             
         	<FlatButton 
         		label="Send" 
