@@ -13,16 +13,16 @@ export function getFeedbacks(props){
 	};
 }
 
-export function createFeedback(props){
-	const data = new FormData();
-	data.append('age', data.age);
-	data.append('name', data.name);
-	data.append('date', data.date);
-	data.append('id_last_request', data.id_last_request);
-	if(props.file){
-		data.append('file', props.file[0]);
+export function createFeedback(data){
+	const props = new FormData();
+	props.append('age', data.age);
+	props.append('name', data.name);
+	props.append('date', data.date);
+	props.append('id_last_request', data.id_last_request);
+	if(data.file){
+		props.append('file', data.file[0]);
 	}
-	const request = axios.post(`${API_URL}/feedbacks`, data); 
+	const request = axios.post(`${API_URL}/feedbacks`, props); 
 	return {
 		type: CREATE_FEEDBACK,
 		payload: request

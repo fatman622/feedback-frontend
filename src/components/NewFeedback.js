@@ -30,7 +30,7 @@ class NewFeedback extends Component{
 			});
 		}
 		return createFeedback(data).then((request) => {
-			console.log("data fie",data)
+			console.log("request",request)
 			if (data.age < 17 || data.age > 65 || data.age == null) {
 	      throw new SubmissionError({ age: 'Age must be from 17 to 65'})
 	    } 
