@@ -93,7 +93,14 @@ class NewFeedback extends Component{
 	          	label="Last request id"
 	          />
           </div>
-         <Field name="file" component={FileUpload} type="file" />
+          <br/>
+          <div>
+	         	<Field
+	         	 name="file"
+	         	 component={FileUpload}
+	         	 type="file" 
+	         	/>
+         	</div>
           <div>{error && <strong>{error}</strong>}</div>             
         	<FlatButton 
         		label="Send" 
