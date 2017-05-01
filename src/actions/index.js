@@ -19,8 +19,9 @@ export function createFeedback(data){
 	props.append('name', data.name);
 	props.append('date', data.date);
 	props.append('id_last_request', data.id_last_request);
-	if(data.file){
-		props.append('file', data.file[0]);
+	console.log ("Data from index", data)
+	if(data.attachment){
+		props.append('attachment', data.attachment[0]);
 	}
 	const request = axios.post(`${API_URL}/feedbacks`, props); 
 	return {

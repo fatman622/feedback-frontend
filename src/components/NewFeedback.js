@@ -96,7 +96,7 @@ class NewFeedback extends Component{
           <br/>
           <div>
 	         	<Field
-	         	 name="file"
+	         	 name="attachment"
 	         	 component={FileUpload}
 	         	 type="file" 
 	         	/>
